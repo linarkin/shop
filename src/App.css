@@ -1,5 +1,16 @@
+
+body {
+  font-family: 'Cuprum', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .App-logo {
