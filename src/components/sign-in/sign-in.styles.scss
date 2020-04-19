@@ -1,3 +1,8 @@
 .sign-in-form {
     width: 400px;
+
+    &__buttons-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
 }

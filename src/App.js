@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   unsubscribeFromAuth = null;
-  
+
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth) {
@@ -33,8 +33,8 @@ class App extends React.Component {
         });
       }
       else {
-        this.props.setCurrentUser(userAuth);
-      }
+        setCurrentUser(userAuth);
+        }
     })
   }
 
@@ -50,7 +50,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
-          <Route exact path="/signin" render = { 
+          <Route exact path="/signin" render = {
             () => this.props.currentUser ? (<Redirect to='/' />) : (<SignIn />)
           }/>
         </Switch>
@@ -60,7 +60,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 })
 
 const mapDispatchToProps = dispatch => ({
